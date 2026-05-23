@@ -1,4 +1,17 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
+
+const phoneLink = (
+  <a href={`tel:${siteConfig.phone}`}>
+    <strong>{siteConfig.phoneDisplay}</strong>
+  </a>
+);
+
+const whatsappLink = (
+  <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer">
+    WhatsApp
+  </a>
+);
 
 export const postContent: Record<string, () => React.ReactNode> = {
   "benefits-of-solar-panels-in-basti": () => (
@@ -102,7 +115,7 @@ export const postContent: Record<string, () => React.ReactNode> = {
       <p>
         If you&apos;d like a personalised analysis of how much you&apos;d
         save with a rooftop solar system in Basti, give us a call at{" "}
-        <strong>+91 94520 99320</strong> or send a WhatsApp message. Our
+        {phoneLink} or send a {whatsappLink} message. Our
         site survey is completely free with no obligation.
       </p>
     </>
@@ -185,7 +198,7 @@ export const postContent: Record<string, () => React.ReactNode> = {
         Beyond the central subsidy, Uttar Pradesh occasionally announces
         additional state-level incentives through UPNEDA (Uttar Pradesh New
         and Renewable Energy Development Agency). Current state incentives
-        are subject to change — call us at <strong>+91 94520 99320</strong>{" "}
+        are subject to change — call us at {phoneLink}{" "}
         to know what&apos;s active right now for your location.
       </p>
 
@@ -219,7 +232,7 @@ export const postContent: Record<string, () => React.ReactNode> = {
 
       <p>
         Want to know exactly how much subsidy you&apos;ll get on your specific
-        electricity connection? Call <strong>+91 94520 99320</strong> or read
+        electricity connection? Call {phoneLink} or read
         our breakdown of{" "}
         <Link href="/blog/how-much-electricity-can-solar-save">
           how much electricity solar can actually save
@@ -360,7 +373,7 @@ export const postContent: Record<string, () => React.ReactNode> = {
       <p>
         The right choice depends on your specific UPPCL bill pattern, power
         cut frequency, roof size and budget. Call{" "}
-        <strong>+91 94520 99320</strong> for a free expert recommendation.
+        {phoneLink} for a free expert recommendation.
       </p>
     </>
   ),
@@ -477,7 +490,7 @@ export const postContent: Record<string, () => React.ReactNode> = {
         economics.
       </p>
       <p>
-        Want help choosing? Call <strong>+91 94520 99320</strong> — we
+        Want help choosing? Call {phoneLink} — we
         give honest brand recommendations based on your roof, budget and
         load.
       </p>
@@ -626,8 +639,8 @@ export const postContent: Record<string, () => React.ReactNode> = {
 
       <h2>Want a custom savings estimate?</h2>
       <p>
-        Send us a photo of your latest UPPCL bill on WhatsApp at{" "}
-        <strong>+91 94520 99320</strong> and we&apos;ll send you a
+        Send us a photo of your latest UPPCL bill on {whatsappLink} at{" "}
+        {phoneLink} and we&apos;ll send you a
         personalised solar savings projection — for free, no obligation.
       </p>
     </>

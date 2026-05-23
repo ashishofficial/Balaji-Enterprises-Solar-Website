@@ -7,6 +7,7 @@ export type Location = {
   metaDescription: string;
   h1: string;
   intro: string;
+  address?: string;
   landmarks: string[];
   pincodes: string[];
   keywords: string[];
@@ -111,6 +112,58 @@ export const locations: Location[] = [
       "rooftop solar Ayodhya",
       "solar installer Ayodhya",
       "Ayodhya solar city",
+    ],
+  },
+  {
+    slug: "solar-company-hardoi",
+    city: "Hardoi",
+    district: "Hardoi",
+    distanceKm: 235,
+    metaTitle: "Solar Company in Hardoi | Rooftop Solar Installer | Balaji Enterprises",
+    metaDescription:
+      "Solar installation in Hardoi for homes, shops, schools and businesses. Rooftop solar, subsidy paperwork, net metering and AMC by Balaji Enterprises.",
+    h1: "Solar Company in Hardoi, Uttar Pradesh",
+    intro:
+      "Balaji Enterprises provides complete rooftop solar installation in Hardoi for residential, commercial and institutional customers. We help with system design, genuine solar panels, subsidy paperwork, net-metering support and long-term maintenance.",
+    landmarks: [
+      "Hardoi Railway Station",
+      "Numaish Chauraha",
+      "Sandila",
+      "Shahabad",
+    ],
+    pincodes: ["241001", "241122", "241124", "241125"],
+    keywords: [
+      "solar company Hardoi",
+      "rooftop solar Hardoi",
+      "solar installer Hardoi",
+      "solar panel dealer Hardoi",
+    ],
+  },
+  {
+    slug: "solar-company-lucknow",
+    city: "Lucknow",
+    district: "Lucknow",
+    distanceKm: 205,
+    metaTitle: "Solar Company in Lucknow | Rooftop Solar Installer | Balaji Enterprises",
+    metaDescription:
+      "Rooftop solar installation in Lucknow with subsidy assistance, net metering, genuine solar panels and AMC support. Visit Balaji Enterprises in Gomti Nagar.",
+    h1: "Solar Company in Lucknow, Uttar Pradesh",
+    intro:
+      "Balaji Enterprises serves Lucknow customers with end-to-end rooftop solar solutions for homes, apartments, shops, offices, schools and commercial buildings. Our team supports site survey, solar design, installation, subsidy filing, net-metering and after-sales service.",
+    address:
+      "1st Floor, Vivek Plaza, Vibhuti Khand, Gomti Nagar, Lucknow 226010",
+    landmarks: [
+      "Gomti Nagar",
+      "Vibhuti Khand",
+      "Indira Nagar",
+      "Hazratganj",
+    ],
+    pincodes: ["226010", "226016", "226001", "226028"],
+    keywords: [
+      "solar company Lucknow",
+      "rooftop solar Lucknow",
+      "solar installer Gomti Nagar",
+      "solar panel dealer Lucknow",
     ],
   },
 ];

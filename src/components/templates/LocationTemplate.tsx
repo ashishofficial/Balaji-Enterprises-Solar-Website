@@ -118,8 +118,19 @@ export function LocationTemplate({ location }: { location: Location }) {
 
             <h2>How quickly can you start in {location.city}?</h2>
             <p>
-              Once you call us at <strong>{siteConfig.phoneDisplay}</strong> or
-              send a WhatsApp message, we typically schedule a free site
+              Once you call us at{" "}
+              <a href={`tel:${siteConfig.phone}`}>
+                <strong>{siteConfig.phoneDisplay}</strong>
+              </a>{" "}
+              or send a{" "}
+              <a
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp message
+              </a>
+              , we typically schedule a free site
               survey in {location.city} within 24-48 hours. Installation begins
               7-10 days later, depending on roof preparation and material
               delivery. The complete process from your first call to
@@ -158,6 +169,23 @@ export function LocationTemplate({ location }: { location: Location }) {
                     {location.pincodes.join(", ")}
                   </dd>
                 </div>
+                {location.address && (
+                  <div>
+                    <dt className="text-slate-600 mb-1">Local address</dt>
+                    <dd>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          location.address
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-700 hover:text-brand-800"
+                      >
+                        {location.address}
+                      </a>
+                    </dd>
+                  </div>
+                )}
                 <div>
                   <dt className="text-slate-600 mb-1">Major areas</dt>
                   <dd className="font-medium text-slate-900">

@@ -26,9 +26,10 @@ export function Section({
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   align?: "left" | "center";
   level?: 2 | 3;
+  className?: string;
 };
 
 export function SectionHeading({
@@ -37,13 +38,15 @@ export function SectionHeading({
   description,
   align = "center",
   level = 2,
+  className,
 }: SectionHeadingProps) {
   const HTag = level === 2 ? "h2" : "h3";
   return (
     <div
       className={cn(
         "max-w-3xl mb-10 lg:mb-14",
-        align === "center" ? "mx-auto text-center" : ""
+        align === "center" ? "mx-auto text-center" : "",
+        className
       )}
     >
       {eyebrow && (

@@ -8,12 +8,13 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/jsonld";
 import { homeFaqs } from "@/data/faqs";
 import { images } from "@/lib/images";
+import { siteConfig } from "@/lib/site-config";
 
 const extraFaqs = [
   {
     question: "Do you offer EMI options for rooftop solar in Basti?",
     answer:
-      "Yes. We've partnered with Bajaj Finserv, Tata Capital and select PSU banks to offer no-cost or low-EMI options for rooftop solar in Basti. EMIs start as low as ₹2,000/month for a 3 kW residential system.",
+      "Yes. We've partnered with Bajaj Finserv, Tata Capital and select PSU banks to offer no-cost or low-EMI options for rooftop solar in Basti. EMIs start as low as Rs. 2,000/month for a 3 kW residential system.",
   },
   {
     question: "What documents are needed for solar subsidy in UP?",
@@ -33,16 +34,16 @@ const extraFaqs = [
   {
     question: "Do you provide solar AMC for systems not installed by you?",
     answer:
-      "Yes. Our AMC and repair service works on all brands and all installers — even if your original installer is no longer available. We can take over maintenance for any existing rooftop solar plant.",
+      "Yes. Our AMC and repair service works on all brands and all installers, even if your original installer is no longer available. We can take over maintenance for any existing rooftop solar plant.",
   },
 ];
 
 const allFaqs = [...homeFaqs, ...extraFaqs];
 
 export const metadata = buildMetadata({
-  title: "Solar FAQs — Rooftop Solar in Basti, UP",
+  title: "Solar FAQs - Rooftop Solar in Basti, UP",
   description:
-    "Answers to common questions about rooftop solar in Basti — cost, subsidy, brands, warranty, EMI, AMC and more.",
+    "Answers to common questions about rooftop solar in Basti: cost, subsidy, brands, warranty, EMI, AMC and more.",
   path: "/faqs",
   keywords: ["solar FAQ Basti", "rooftop solar questions", ...baseKeywords],
 });
@@ -72,7 +73,18 @@ export default function FAQsPage() {
         <SectionHeading
           eyebrow="FAQs"
           title="Your solar questions, answered"
-          description="Still confused? Call us at +91 94520 99320 — our Hindi-speaking team is happy to explain anything."
+          description={
+            <>
+              Still confused? Call us at{" "}
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="font-semibold text-brand-700 hover:text-brand-800"
+              >
+                {siteConfig.phoneDisplay}
+              </a>{" "}
+              - our Hindi-speaking team is happy to explain anything.
+            </>
+          }
         />
         <FAQAccordion faqs={allFaqs} />
       </Section>

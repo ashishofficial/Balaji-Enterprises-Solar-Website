@@ -134,6 +134,15 @@ body {
   }
 }
 
+@keyframes brandMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -141,4 +150,13 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.brand-marquee-track {
+  animation: brandMarquee 18s linear infinite !important;
+  will-change: transform;
+}
+
+.brand-marquee-track:hover {
+  animation-play-state: paused !important;
 }

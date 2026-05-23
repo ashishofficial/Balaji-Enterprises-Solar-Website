@@ -32,9 +32,14 @@ export function MapEmbed({
       <div className="flex items-center justify-between gap-3 p-4 bg-slate-50 border-t border-slate-200">
         <div className="flex items-start gap-2">
           <MapPinIcon className="text-brand-600 mt-0.5 shrink-0" />
-          <p className="text-sm text-slate-600">
+          <a
+            href={siteConfig.mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-slate-600 hover:text-brand-700"
+          >
             {siteConfig.address.fullAddress}
-          </p>
+          </a>
         </div>
         <a
           href={siteConfig.mapLink}

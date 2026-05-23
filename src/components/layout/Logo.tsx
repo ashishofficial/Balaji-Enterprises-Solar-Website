@@ -1,17 +1,24 @@
 import Link from "next/link";
 import { SunIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
-export function Logo({ className }: { className?: string }) {
+export function Logo({
+  className,
+  dark = false,
+}: {
+  className?: string;
+  dark?: boolean;
+}) {
   return (
     <Link
       href="/"
-      className={`flex items-center gap-2 group ${className ?? ""}`}
+      className={cn("flex items-center gap-2 group", className)}
       aria-label="Balaji Enterprises home"
     >
-      <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 text-sun-300 shadow-sm group-hover:shadow-md transition-shadow overflow-hidden">
+      <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 text-sun-300 shadow-sm transition-shadow group-hover:shadow-md">
         <span
           aria-hidden="true"
-          className="absolute inset-0 motion-safe:animate-spin-slow flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center motion-safe:animate-spin-slow"
         >
           <SunIcon width={22} height={22} />
         </span>
@@ -21,10 +28,20 @@ export function Logo({ className }: { className?: string }) {
         />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-bold text-slate-900">
-          Balaji <span className="text-brand-600">Enterprises</span>
+        <span
+          className={cn(
+            "font-display text-lg font-bold",
+            dark ? "text-white" : "text-slate-900"
+          )}
+        >
+          Balaji <span className={dark ? "text-sun-300" : "text-brand-600"}>Enterprises</span>
         </span>
-        <span className="text-[10px] uppercase tracking-widest text-slate-600">
+        <span
+          className={cn(
+            "text-[10px] uppercase tracking-widest",
+            dark ? "text-slate-200" : "text-slate-600"
+          )}
+        >
           Basti · UP
         </span>
       </span>

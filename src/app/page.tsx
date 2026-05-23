@@ -189,7 +189,7 @@ export default function HomePage() {
 
       <BrandMarquee />
 
-      <Section id="about" className="bg-slate-50">
+      <Section id="about" className="bg-gradient-to-b from-slate-50 to-white">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <div>
             <p className="mb-3 inline-block rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
@@ -279,7 +279,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="why-us">
+      <Section id="why-us" className="bg-white">
         <SectionHeading
           eyebrow="Why Balaji Enterprises"
           title="The right partner for your solar journey in Basti"
@@ -288,11 +288,12 @@ export default function HomePage() {
         <FeatureGrid features={whyChooseUs} />
       </Section>
 
-      <Section id="services" className="bg-slate-50">
+      <Section id="services" className="bg-brand-50">
         <SectionHeading
           eyebrow="Our Solar Services"
           title="Complete solar solutions for Basti homes & businesses"
           description="From a 1 kW home setup to a 1 MW industrial plant, we cover every solar service you might need — under one roof."
+          className="lg:max-w-5xl"
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
@@ -316,7 +317,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="brands">
+      <Section id="brands" className="bg-white">
         <SectionHeading
           eyebrow="Solar Brands We Supply"
           title="Authorised dealer of India's top solar brands"
@@ -371,7 +372,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="process">
+      <Section id="process" className="bg-sun-50/60">
         <SectionHeading
           eyebrow="How It Works"
           title="Your solar installation in 4 simple steps"
@@ -398,20 +399,39 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="faqs">
+      <Section id="faqs" className="bg-white">
         <SectionHeading
           eyebrow="Frequently Asked Questions"
           title="Everything you wanted to know about rooftop solar in Basti"
-          description="Still have questions? Call us at +91 94520 99320 or chat on WhatsApp — we're happy to explain in Hindi too."
+          description={
+            <>
+              Still have questions? Call us at{" "}
+              <a href={`tel:${siteConfig.phone}`} className="font-semibold text-brand-700 hover:text-brand-800">
+                {siteConfig.phoneDisplay}
+              </a>{" "}
+              or chat on{" "}
+              <a
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brand-700 hover:text-brand-800"
+              >
+                WhatsApp
+              </a>{" "}
+              — we're happy to explain in Hindi too.
+            </>
+          }
+          className="lg:max-w-5xl"
         />
         <FAQAccordion faqs={homeFaqs} />
       </Section>
 
-      <Section id="service-areas" className="bg-slate-50">
+      <Section id="service-areas" className="bg-brand-50">
         <SectionHeading
           eyebrow="Where We Work"
           title="Solar installation across Basti & nearby districts"
           description="Based in Bargadwa, Basti, we deliver solar installation across eastern Uttar Pradesh."
+          className="lg:max-w-5xl"
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="card p-6">
@@ -447,7 +467,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="blog">
+      <Section id="blog" className="bg-white">
         <SectionHeading
           eyebrow="Solar Knowledge Center"
           title="Latest from our blog"
@@ -467,7 +487,7 @@ export default function HomePage() {
 
       <CTABanner />
 
-      <Section id="contact" className="bg-slate-50">
+      <Section id="contact" className="bg-gradient-to-b from-slate-50 to-brand-50">
         <SectionHeading
           eyebrow="Get In Touch"
           title="Get your free rooftop solar quote today"
@@ -482,7 +502,16 @@ export default function HomePage() {
             />
             <div className="card p-6 space-y-3 text-sm">
               <h3 className="text-lg">Visit our office</h3>
-              <p className="text-slate-600">{siteConfig.address.fullAddress}</p>
+              <p className="text-slate-600">
+                <a
+                  href={siteConfig.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-brand-700 hover:text-brand-800"
+                >
+                  {siteConfig.address.fullAddress}
+                </a>
+              </p>
               <p className="text-slate-600">
                 Open Monday–Saturday, 9 AM – 7 PM · Sunday 10 AM – 4 PM
               </p>
