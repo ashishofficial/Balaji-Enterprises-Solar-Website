@@ -93,16 +93,26 @@ export function Header() {
                             {b.name}
                           </Link>
                         ))}
-                      {item.dropdown === "locations" &&
-                        locations.map((l) => (
+                      {item.dropdown === "locations" && (
+                        <>
                           <Link
-                            key={l.slug}
-                            href={`/${l.slug}`}
+                            key="basti"
+                            href="/"
                             className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-700"
                           >
-                            Solar in {l.city}
+                            Solar in Basti
                           </Link>
-                        ))}
+                          {locations.map((l) => (
+                            <Link
+                              key={l.slug}
+                              href={`/${l.slug}`}
+                              className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+                            >
+                              Solar in {l.city}
+                            </Link>
+                          ))}
+                        </>
+                      )}
                     </div>
                   </div>
                 )}

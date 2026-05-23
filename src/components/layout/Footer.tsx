@@ -12,6 +12,13 @@ import {
   ClockIcon,
 } from "@/components/icons";
 
+const hardoiAddress =
+  "Bansi Road, Badeban Rd, Bargadwa, Basti, Habeli Khas, Uttar Pradesh 272001";
+const hardoiMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  hardoiAddress
+)}`;
+const bastiAddress = siteConfig.address.fullAddress;
+const bastiMapLink = siteConfig.mapLink;
 const lucknowAddress =
   "1st Floor, Vivek Plaza, Vibhuti Khand, Gomti Nagar, Lucknow 226010";
 const lucknowMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -55,39 +62,9 @@ export function Footer() {
               {siteConfig.email}
             </a>
             <div className="space-y-3">
-              <div>
-                <h5 className="text-white text-xs font-semibold mb-1 uppercase tracking-wide">Hardoi</h5>
-                <a
-                  href={siteConfig.mapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
-                >
-                  <MapPinIcon
-                    width={16}
-                    height={16}
-                    className="text-brand-400 mt-0.5 shrink-0"
-                  />
-                  <span>{siteConfig.address.fullAddress}</span>
-                </a>
-              </div>
 
-              <div>
-                <h5 className="text-white text-xs font-semibold mb-1 uppercase tracking-wide">Lucknow</h5>
-                <a
-                  href={lucknowMapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
-                >
-                  <MapPinIcon
-                    width={16}
-                    height={16}
-                    className="text-brand-400 mt-0.5 shrink-0"
-                  />
-                  <span>{lucknowAddress}</span>
-                </a>
-              </div>
+
+
             </div>
             <p className="flex items-center gap-2 text-slate-100">
               <ClockIcon width={16} height={16} className="text-brand-400" />
@@ -144,58 +121,54 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <h4 className="text-white text-sm font-extrabold mt-6 mb-3 uppercase tracking-wide">
-            Quick Links
-          </h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/about" className="text-slate-100 hover:text-sun-200">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/gallery" className="text-slate-100 hover:text-sun-200">
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link href="/testimonials" className="text-slate-100 hover:text-sun-200">
-                Testimonials
-              </Link>
-            </li>
-            <li>
-              <Link href="/faqs" className="text-slate-100 hover:text-sun-200">
-                FAQs
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-slate-100 hover:text-sun-200">
-                Contact
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-100">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-          </p>
-          <p className="text-center">
-            Solar Panel Dealer in Basti · Rooftop Solar Installer · Uttar Pradesh
-          </p>
-          <p>
-            Designed &amp; developed by{" "}
+      <div>
+        <div className="container py-8 grid gap-6 sm:grid-cols-3 text-sm text-slate-100">
+          {[
+            {
+              label: "Hardoi:",
+              address: hardoiAddress,
+              href: hardoiMapLink,
+            },
+            {
+              label: "Basti:",
+              address: bastiAddress,
+              href: bastiMapLink,
+            },
+            {
+              label: "Lucknow:",
+              address: lucknowAddress,
+              href: lucknowMapLink,
+            },
+          ].map((item) => (
             <a
-              href="https://codingclave.com/"
+              key={item.label}
+              href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-white hover:text-sun-200 transition-colors mr-4"
+              className="group block rounded-2xl border border-white/10 bg-slate-950/80 py-3 px-4 transition hover:border-sun-200"
             >
-              CodingClave Development LLP
+              <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wide text-white font-semibold mb-1">
+                <MapPinIcon width={16} height={16} className="text-brand-400" />
+                {item.label}
+              </div>
+              <p className="text-slate-300 leading-5">{item.address}</p>
             </a>
-          </p>
+          ))}
+        </div>
+
+        <div className="container py-4 text-xs text-slate-100">
+          Designed &amp; developed by{" "}
+          <a
+            href="https://codingclave.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white hover:text-sun-200"
+          >
+            CodingClave Development LLP
+          </a>
         </div>
       </div>
     </footer>
