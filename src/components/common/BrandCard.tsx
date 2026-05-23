@@ -13,7 +13,7 @@ export function BrandCard({ slug, name, rating, warranty, about }: BrandCardProp
   return (
     <Link
       href={`/${slug}`}
-      className="card group p-6 flex flex-col h-full hover:-translate-y-1 transition-transform"
+      className="card card-hover group p-6 flex flex-col h-full"
     >
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-700">

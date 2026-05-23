@@ -6,7 +6,7 @@ export function BlogCard({ post }: { post: Post }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="card group p-6 flex flex-col h-full hover:-translate-y-1 transition-transform"
+      className="card card-hover group p-6 flex flex-col h-full"
     >
       <p className="text-xs uppercase tracking-wider text-brand-700 font-semibold">
         {post.category}

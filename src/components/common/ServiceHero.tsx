@@ -36,25 +36,25 @@ export function ServiceHero({
       />
       <div className="container relative py-12 lg:py-20 grid gap-10 lg:grid-cols-2 items-center">
         <div>
-          <div className="mb-5 flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm">
+          <div className="mb-5 flex items-center gap-3 motion-safe:animate-fade-up">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-sm">
               <Icon width={24} height={24} />
             </span>
             <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 shadow-card">
-              <span className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-sun-500 animate-pulse" />
               {eyebrow}
             </p>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-slate-900">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-slate-900 motion-safe:animate-fade-up [animation-delay:80ms]">
             {title}
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
+          <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl motion-safe:animate-fade-up [animation-delay:160ms]">
             {subtitle}
           </p>
 
           {bullets && bullets.length > 0 && (
-            <ul className="mt-6 grid sm:grid-cols-2 gap-2 max-w-xl">
+            <ul className="mt-6 grid sm:grid-cols-2 gap-2 max-w-xl motion-safe:animate-fade-up [animation-delay:240ms]">
               {bullets.map((b) => (
                 <li
                   key={b}
@@ -89,7 +89,7 @@ export function ServiceHero({
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-cardHover">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-cardHover motion-safe:animate-scale-in [animation-delay:160ms]">
           <Image
             src={image.src}
             alt={image.alt}

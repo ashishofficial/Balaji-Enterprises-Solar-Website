@@ -149,8 +149,19 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <p>
+          <p className="text-center">
             Solar Panel Dealer in Basti · Rooftop Solar Installer · Uttar Pradesh
+          </p>
+          <p>
+            Designed &amp; developed by{" "}
+            <a
+              href="https://codingclave.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sun-400 hover:text-sun-300 transition-colors"
+            >
+              CodingClave
+            </a>
           </p>
         </div>
       </div>

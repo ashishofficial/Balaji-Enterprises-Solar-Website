@@ -31,25 +31,25 @@ export function Hero({
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-sun-50 border-b border-slate-200">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.12),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(251,191,36,0.10),transparent_45%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(30,58,107,0.10),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(234,179,8,0.10),transparent_45%)]"
       />
       <div className="container relative py-12 lg:py-20 grid gap-10 lg:grid-cols-2 items-center">
         <div>
           {eyebrow && (
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 shadow-card">
-              <span className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 shadow-card motion-safe:animate-fade-up">
+              <span className="h-2 w-2 rounded-full bg-sun-500 animate-pulse" />
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-slate-900">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-slate-900 motion-safe:animate-fade-up [animation-delay:80ms]">
             {title}
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
+          <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl motion-safe:animate-fade-up [animation-delay:160ms]">
             {subtitle}
           </p>
 
           {bullets && bullets.length > 0 && (
-            <ul className="mt-6 grid sm:grid-cols-2 gap-2 max-w-xl">
+            <ul className="mt-6 grid sm:grid-cols-2 gap-2 max-w-xl motion-safe:animate-fade-up [animation-delay:240ms]">
               {bullets.map((b) => (
                 <li
                   key={b}
@@ -64,7 +64,7 @@ export function Hero({
             </ul>
           )}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 motion-safe:animate-fade-up [animation-delay:320ms]">
             <a href={`tel:${siteConfig.phone}`} className="btn-primary">
               <PhoneIcon width={16} height={16} />
               Call {siteConfig.phoneDisplay}
@@ -84,7 +84,7 @@ export function Hero({
           </div>
 
           {showRating && (
-            <div className="mt-8 flex items-center gap-6 text-sm">
+            <div className="mt-8 flex items-center gap-6 text-sm motion-safe:animate-fade-up [animation-delay:400ms]">
               <div>
                 <div className="flex items-center gap-0.5 text-sun-500">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -111,7 +111,7 @@ export function Hero({
           )}
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-cardHover">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-cardHover motion-safe:animate-scale-in [animation-delay:160ms]">
           <Image
             src={image.src}
             alt={image.alt}

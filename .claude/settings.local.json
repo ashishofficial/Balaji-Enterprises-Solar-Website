@@ -11,7 +11,10 @@
       "Bash(curl -s \"http://localhost:3000/_next/static/css/app/layout.css?v=1779535163716\")",
       "Bash(curl -s -o /dev/null -w \"Robots: %{http_code}\\\\n\" http://localhost:3000/robots.txt)",
       "Bash(xargs sed -i 's/text-slate-500/text-slate-600/g')",
-      "Read(//c/Users/Nope/Desktop/Yash Trivedi/**)"
+      "Read(//c/Users/Nope/Desktop/Yash Trivedi/**)",
+      "Bash(npm install *)",
+      "Bash(npm list *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)"
     ]
   }
 }

@@ -21,7 +21,7 @@ export function ServiceCard({
   return (
     <Link
       href={`/${slug}`}
-      className="card group p-6 flex flex-col h-full hover:-translate-y-1 transition-transform"
+      className="card card-hover group p-6 flex flex-col h-full"
     >
       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm">
         <Icon width={24} height={24} />

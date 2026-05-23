@@ -104,8 +104,8 @@ export default function GalleryPage() {
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
-            <figure key={`${p.title}-${i}`} className="card overflow-hidden">
-              <div className="relative aspect-[4/3] bg-slate-100">
+            <figure key={`${p.title}-${i}`} className="card card-hover overflow-hidden group">
+              <div className="img-zoom relative aspect-[4/3] bg-slate-100">
                 <Image
                   src={p.image.src}
                   alt={p.image.alt}
