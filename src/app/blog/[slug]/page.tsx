@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { posts, getPost } from "@/data/posts";
 import { postContent } from "@/data/post-content";
 import { buildMetadata } from "@/lib/seo";
@@ -10,6 +11,7 @@ import { CTABanner } from "@/components/common/CTABanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema } from "@/lib/jsonld";
 import { siteConfig } from "@/lib/site-config";
+import { images } from "@/lib/images";
 import { ClockIcon, ArrowRightIcon } from "@/components/icons";
 
 type Params = Promise<{ slug: string }>;
@@ -29,6 +31,7 @@ export async function generateMetadata({ params }: { params: Params }) {
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
+    image: images[post.image].src,
   });
 }
 
@@ -39,6 +42,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const Content = postContent[post.slug];
   const url = `${siteConfig.url}/blog/${post.slug}`;
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const heroImage = images[post.image];
 
   return (
     <>
@@ -48,6 +52,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           description: post.metaDescription,
           url,
           datePublished: post.date,
+          image: `${siteConfig.url}${heroImage.src}`,
         })}
       />
       <Breadcrumbs
@@ -58,11 +63,13 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         ]}
       />
       <Section className="bg-gradient-to-b from-brand-50 to-white">
-        <div className="max-w-3xl mx-auto">
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+          <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-wider text-brand-700 font-semibold">
             {post.category}
           </p>
           <h1 className="mt-3">{post.title}</h1>
+          <p className="mt-4 text-lg text-slate-600">{post.excerpt}</p>
           <div className="mt-5 flex items-center gap-4 text-sm text-slate-600">
             <span className="flex items-center gap-1">
               <ClockIcon width={14} height={14} />
@@ -76,6 +83,17 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 year: "numeric",
               })}
             </time>
+          </div>
+          </div>
+          <div className="relative aspect-[16/11] overflow-hidden rounded-xl bg-slate-100 shadow-cardHover">
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </Section>

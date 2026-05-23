@@ -1,9 +1,11 @@
 import { buildMetadata, baseKeywords } from "@/lib/seo";
 import { Section, SectionHeading } from "@/components/common/Section";
+import { PageHero } from "@/components/common/PageHero";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { ContactForm } from "@/components/common/ContactForm";
 import { MapEmbed } from "@/components/common/MapEmbed";
 import { siteConfig } from "@/lib/site-config";
+import { images } from "@/lib/images";
 import {
   PhoneIcon,
   WhatsAppIcon,
@@ -58,6 +60,17 @@ export default function ContactPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Contact", href: "/contact" },
+        ]}
+      />
+      <PageHero
+        eyebrow="Contact Balaji Enterprises"
+        title="Book a free rooftop solar survey in Basti"
+        description="Call, WhatsApp, email or visit our Bargadwa office. We will review your bill, roof and subsidy eligibility before quoting."
+        image={images.teamBasti}
+        stats={[
+          { value: "30 min", label: "Typical quote response" },
+          { value: "Free", label: "Basti city survey" },
+          { value: "Hindi", label: "Friendly local support" },
         ]}
       />
       <Section className="bg-gradient-to-b from-brand-50 to-white">

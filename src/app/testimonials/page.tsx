@@ -1,9 +1,11 @@
 import { buildMetadata, baseKeywords } from "@/lib/seo";
 import { Section, SectionHeading } from "@/components/common/Section";
+import { PageHero } from "@/components/common/PageHero";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { TestimonialCard } from "@/components/common/TestimonialCard";
 import { CTABanner } from "@/components/common/CTABanner";
 import { testimonials } from "@/data/testimonials";
+import { images } from "@/lib/images";
 
 export const metadata = buildMetadata({
   title: "Customer Testimonials | Balaji Enterprises Solar Basti",
@@ -20,6 +22,17 @@ export default function TestimonialsPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Testimonials", href: "/testimonials" },
+        ]}
+      />
+      <PageHero
+        eyebrow="Customer Reviews"
+        title="Real feedback from solar customers across Basti"
+        description="Homeowners, shopkeepers, schools and farms share why they chose Balaji Enterprises for rooftop solar installation and service."
+        image={images.customerRooftop}
+        stats={[
+          { value: "200+", label: "Customers served" },
+          { value: "98%", label: "Satisfaction rate" },
+          { value: "Local", label: "Basti support team" },
         ]}
       />
       <Section>

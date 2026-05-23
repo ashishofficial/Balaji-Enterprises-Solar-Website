@@ -49,6 +49,11 @@ const config: Config = {
         "fade-up-slow": "fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both",
         "slide-up": "slideUp 0.6s ease-out both",
         "scale-in": "scaleIn 0.5s ease-out both",
+        shimmer: "shimmer 2.4s linear infinite",
+        "spin-slow": "spin 20s linear infinite",
+        marquee: "marquee 30s linear infinite",
+        "ping-slow": "pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite",
+        float: "float 4s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -66,6 +71,22 @@ const config: Config = {
         scaleIn: {
           "0%": { opacity: "0", transform: "scale(0.96)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        shimmer: {
+          "0%": { transform: "translateX(-100%) skewX(-20deg)" },
+          "100%": { transform: "translateX(250%) skewX(-20deg)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        pingSlow: {
+          "0%": { transform: "scale(1)", opacity: "0.7" },
+          "75%, 100%": { transform: "scale(2)", opacity: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-6px)" },
         },
       },
     },

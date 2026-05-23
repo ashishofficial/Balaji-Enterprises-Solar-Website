@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { buildMetadata, baseKeywords } from "@/lib/seo";
 import { Section, SectionHeading } from "@/components/common/Section";
+import { PageHero } from "@/components/common/PageHero";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { CTABanner } from "@/components/common/CTABanner";
 import { images } from "@/lib/images";
@@ -94,6 +95,17 @@ export default function GalleryPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Gallery", href: "/gallery" },
+        ]}
+      />
+      <PageHero
+        eyebrow="Project Gallery"
+        title="Real rooftop solar installations from our field team"
+        description="Dummy project images from the website asset library show how completed homes, businesses and handover moments appear across Basti."
+        image={images.teamHandover}
+        stats={[
+          { value: "9", label: "Featured projects" },
+          { value: "Homes", label: "Residential rooftops" },
+          { value: "Shops", label: "Commercial systems" },
         ]}
       />
       <Section>

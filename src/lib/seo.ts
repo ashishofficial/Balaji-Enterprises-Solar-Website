@@ -25,7 +25,7 @@ export function buildMetadata({
     : `${title} | ${siteConfig.name}`;
 
   return {
-    title: fullTitle,
+    title: { absolute: fullTitle },
     description,
     keywords,
     alternates: { canonical: url },

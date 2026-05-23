@@ -140,6 +140,25 @@ export function ServiceTemplate({ service }: { service: Service }) {
               ))}
             </ul>
 
+            <h2>Who should choose {service.shortTitle}?</h2>
+            <ul>
+              {service.bestFor.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+
+            <h2>What we verify before quoting</h2>
+            <p>
+              We do not quote a system only from a phone call. A proper site
+              survey helps us avoid oversizing, shading losses, unsafe wiring
+              and unrealistic saving claims.
+            </p>
+            <ul>
+              {service.surveyChecks.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+
             <h2>Costs & Savings — Basti example</h2>
             <p>
               A typical Basti homeowner using around 350 units of UPPCL

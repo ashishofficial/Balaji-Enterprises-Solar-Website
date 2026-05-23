@@ -9,6 +9,8 @@ export type Service = {
   icon: string;
   image: string;
   highlights: string[];
+  bestFor: string[];
+  surveyChecks: string[];
   keywords: string[];
 };
 
@@ -32,6 +34,16 @@ export const services: Service[] = [
       "25-year panel warranty",
       "Free site survey in Basti",
       "Net-metering paperwork handled",
+    ],
+    bestFor: [
+      "Homes and shops with monthly UPPCL bills above Rs. 1,500",
+      "Concrete roofs with clear sunlight from 9 AM to 4 PM",
+      "Families who want subsidy support and long-term bill savings",
+    ],
+    surveyChecks: [
+      "Usable roof area, parapet height and panel tilt direction",
+      "Shadow from nearby buildings, trees, water tanks and antennas",
+      "Existing meter load, earthing point and inverter placement",
     ],
     keywords: [
       "rooftop solar installation Basti",
@@ -60,6 +72,16 @@ export const services: Service[] = [
       "Works during power cuts (hybrid)",
       "Trusted across 200+ Basti homes",
     ],
+    bestFor: [
+      "1 kW to 5 kW family homes with predictable monthly usage",
+      "Customers applying under PM Surya Ghar Muft Bijli Yojana",
+      "Households that want EMI options and a simple payback plan",
+    ],
+    surveyChecks: [
+      "Last 6-12 months of electricity bills to size the plant correctly",
+      "Safe cable route from rooftop panels to inverter and meter",
+      "Appliance load pattern for AC, pump, fridge and daytime usage",
+    ],
     keywords: [
       "residential solar Basti",
       "home solar panels Basti",
@@ -86,6 +108,16 @@ export const services: Service[] = [
       "5-year accelerated tax savings",
       "MNRE-empanelled vendor",
       "Free ROI study",
+    ],
+    bestFor: [
+      "Factories, schools, hospitals, hotels, cold storages and showrooms",
+      "Businesses with high daytime electricity consumption",
+      "Owners who need a written ROI and depreciation calculation",
+    ],
+    surveyChecks: [
+      "Sanctioned commercial load, transformer capacity and LT/HT connection",
+      "Roof structure strength for ballast or elevated mounting",
+      "Load curve, working hours and DG backup integration needs",
     ],
     keywords: [
       "commercial solar Basti",
@@ -114,6 +146,16 @@ export const services: Service[] = [
       "Auto sync with grid",
       "Best for homes with stable power",
     ],
+    bestFor: [
+      "Homes with stable UPPCL supply and high monthly grid bills",
+      "Customers focused on lowest cost per solar unit",
+      "Residential subsidy projects where battery backup is not required",
+    ],
+    surveyChecks: [
+      "Net-metering feasibility for the consumer number and meter category",
+      "Main distribution board condition and available protection space",
+      "Export limit, inverter capacity and approved panel wattage",
+    ],
     keywords: [
       "on grid solar Basti",
       "grid tied solar Basti",
@@ -140,6 +182,16 @@ export const services: Service[] = [
       "Powers fans, lights, fridges, pumps",
       "1 kW to 25 kW systems",
       "Lifetime maintenance support",
+    ],
+    bestFor: [
+      "Rural homes, farms and shops with long power cuts",
+      "Tube-well, lighting and backup loads away from reliable grid supply",
+      "Customers who value independence more than net-metering credits",
+    ],
+    surveyChecks: [
+      "Daily backup requirement in watt-hours and battery autonomy target",
+      "Battery location ventilation, temperature and safety clearance",
+      "Critical loads that must run during night or cloudy weather",
     ],
     keywords: [
       "off grid solar Basti",
@@ -168,6 +220,16 @@ export const services: Service[] = [
       "App-based monitoring",
       "Future-ready & expandable",
     ],
+    bestFor: [
+      "Homes that need both bill savings and power-cut backup",
+      "Customers planning to add batteries later as budget allows",
+      "Clinics, shops and offices where downtime is costly",
+    ],
+    surveyChecks: [
+      "Essential-load segregation for fans, lights, computers and fridge",
+      "Battery chemistry, backup hours and future expansion space",
+      "Hybrid inverter compatibility with net metering and UPPCL limits",
+    ],
     keywords: [
       "hybrid solar Basti",
       "hybrid solar system Basti",
@@ -194,6 +256,16 @@ export const services: Service[] = [
       "Annual maintenance contracts",
       "On-call breakdown repair",
       "Works on all brands",
+    ],
+    bestFor: [
+      "Existing solar owners seeing lower generation than expected",
+      "Systems older than 12 months that need cleaning or inspection",
+      "Homes and businesses that want annual generation protection",
+    ],
+    surveyChecks: [
+      "Panel soiling, cracks, hotspots and loose mounting clamps",
+      "DC cable, MC4 connector, earthing and surge protection condition",
+      "Inverter logs, grid faults and monthly generation history",
     ],
     keywords: [
       "solar maintenance Basti",

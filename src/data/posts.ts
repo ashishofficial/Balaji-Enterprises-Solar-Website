@@ -1,9 +1,12 @@
+import type { ImageKey } from "@/lib/images";
+
 export type Post = {
   slug: string;
   title: string;
   excerpt: string;
   metaTitle: string;
   metaDescription: string;
+  image: ImageKey;
   date: string;
   readTime: string;
   category: string;
@@ -19,6 +22,7 @@ export const posts: Post[] = [
     metaTitle: "10 Benefits of Solar Panels in Basti (2026 Guide) | Balaji Enterprises",
     metaDescription:
       "Discover the top 10 benefits of installing rooftop solar panels in Basti, Uttar Pradesh — from 90% bill savings to subsidy support and 25-year warranty.",
+    image: "rooftopCustomer",
     date: "2026-01-15",
     readTime: "8 min",
     category: "Solar Education",
@@ -37,6 +41,7 @@ export const posts: Post[] = [
     metaTitle: "Solar Subsidy in Uttar Pradesh 2026 | PM Surya Ghar | Balaji Enterprises",
     metaDescription:
       "Get up to ₹78,000 solar subsidy in Uttar Pradesh under PM Surya Ghar Muft Bijli Yojana. Eligibility, application steps, and documents explained.",
+    image: "heroGPS",
     date: "2026-02-02",
     readTime: "10 min",
     category: "Subsidy & Policy",
@@ -55,6 +60,7 @@ export const posts: Post[] = [
     metaTitle: "On-Grid vs Off-Grid vs Hybrid Solar — 2026 Comparison | Balaji Enterprises",
     metaDescription:
       "On-grid, off-grid or hybrid solar? Detailed comparison of cost, features, payback and best use-cases for homes and businesses in India.",
+    image: "rooftopArrayTeam",
     date: "2026-02-20",
     readTime: "7 min",
     category: "Solar Education",
@@ -73,6 +79,7 @@ export const posts: Post[] = [
     metaTitle: "Best Solar Panels in India 2026 | Brand Comparison | Balaji Enterprises",
     metaDescription:
       "Compare Adani, Tata, Waaree, Vikram and Loom solar panels for 2026. Efficiency, warranty, prices and which is best for your home in India.",
+    image: "commercialInstall",
     date: "2026-03-10",
     readTime: "12 min",
     category: "Brand Reviews",
@@ -91,6 +98,7 @@ export const posts: Post[] = [
     metaTitle: "How Much Can Solar Save? (Real Numbers) | Balaji Enterprises",
     metaDescription:
       "Real savings from rooftop solar in India — generation, monthly bill reduction and payback period for 1 kW to 10 kW systems explained.",
+    image: "rooftop3kw",
     date: "2026-04-05",
     readTime: "9 min",
     category: "Savings & ROI",

@@ -1,11 +1,13 @@
 import { buildMetadata, baseKeywords } from "@/lib/seo";
 import { Section, SectionHeading } from "@/components/common/Section";
+import { PageHero } from "@/components/common/PageHero";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { FAQAccordion } from "@/components/common/FAQAccordion";
 import { CTABanner } from "@/components/common/CTABanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/jsonld";
 import { homeFaqs } from "@/data/faqs";
+import { images } from "@/lib/images";
 
 const extraFaqs = [
   {
@@ -53,6 +55,17 @@ export default function FAQsPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "FAQs", href: "/faqs" },
+        ]}
+      />
+      <PageHero
+        eyebrow="Solar FAQs"
+        title="Straight answers before you invest in solar"
+        description="Understand costs, subsidy, roof area, EMI, net metering, warranty and maintenance before installing rooftop solar in Basti."
+        image={images.teamEngineers}
+        stats={[
+          { value: "Cost", label: "Pricing and payback" },
+          { value: "Subsidy", label: "PM Surya Ghar help" },
+          { value: "AMC", label: "Long-term support" },
         ]}
       />
       <Section>

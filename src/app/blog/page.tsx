@@ -1,9 +1,11 @@
 import { buildMetadata, baseKeywords } from "@/lib/seo";
 import { Section, SectionHeading } from "@/components/common/Section";
+import { PageHero } from "@/components/common/PageHero";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { BlogCard } from "@/components/common/BlogCard";
 import { CTABanner } from "@/components/common/CTABanner";
 import { posts } from "@/data/posts";
+import { images } from "@/lib/images";
 
 export const metadata = buildMetadata({
   title: "Solar Blog — Subsidy, Savings, Brand Reviews | Balaji Enterprises",
@@ -20,6 +22,17 @@ export default function BlogPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Blog", href: "/blog" },
+        ]}
+      />
+      <PageHero
+        eyebrow="Solar Knowledge Center"
+        title="Practical solar guides for Indian homes and businesses"
+        description="Clear, local advice on subsidy, savings, brand selection, system types and rooftop solar decisions for Basti and Uttar Pradesh."
+        image={images.rooftop3kw}
+        stats={[
+          { value: "5", label: "Detailed guides" },
+          { value: "2026", label: "Updated solar topics" },
+          { value: "Basti", label: "Local installation context" },
         ]}
       />
       <Section>

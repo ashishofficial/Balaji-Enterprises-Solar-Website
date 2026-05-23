@@ -29,10 +29,18 @@ export function StickyCTA() {
         href={siteConfig.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden lg:flex fixed bottom-6 right-6 z-30 h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform"
+        className="hidden lg:flex fixed bottom-6 right-6 z-30 h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg motion-safe:hover:scale-110 transition-transform group"
         aria-label="WhatsApp Balaji Enterprises"
       >
-        <WhatsAppIcon width={28} height={28} />
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full bg-[#25D366] motion-safe:animate-ping-slow opacity-70"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full bg-[#25D366] motion-safe:animate-ping-slow opacity-50 [animation-delay:0.9s]"
+        />
+        <WhatsAppIcon width={28} height={28} className="relative z-10" />
       </a>
     </>
   );

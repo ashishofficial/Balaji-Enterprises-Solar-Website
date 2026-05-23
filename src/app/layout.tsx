@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { ScrollProgress } from "@/components/common/ScrollProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessSchema, organizationSchema } from "@/lib/jsonld";
 import { siteConfig } from "@/lib/site-config";
@@ -97,6 +98,7 @@ export default function RootLayout({
         <JsonLd data={[localBusinessSchema(), organizationSchema()]} />
       </head>
       <body className="min-h-screen flex flex-col bg-white font-sans antialiased pb-16 lg:pb-0">
+        <ScrollProgress />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

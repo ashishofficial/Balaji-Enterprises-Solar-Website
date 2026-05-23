@@ -12,6 +12,10 @@ import { FAQAccordion } from "@/components/common/FAQAccordion";
 import { ContactForm } from "@/components/common/ContactForm";
 import { MapEmbed } from "@/components/common/MapEmbed";
 import { CTABanner } from "@/components/common/CTABanner";
+import { BrandMarquee } from "@/components/common/BrandMarquee";
+import { AnimatedCounter } from "@/components/common/AnimatedCounter";
+import { Reveal } from "@/components/common/Reveal";
+import { TiltCard } from "@/components/common/TiltCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { services } from "@/data/services";
 import { brands } from "@/data/brands";
@@ -137,14 +141,15 @@ export default function HomePage() {
       />
 
       <Hero
+        variant="immersive"
+        image={images.rooftopArrayTeam}
         eyebrow="Authorised Solar Dealer · Basti"
         title={
           <>
-            Solar Panel Dealer &<br />
-            <span className="text-brand-700">Rooftop Installer in Basti</span>
+            Solar rooftops built for bills, backup and long-term trust
           </>
         }
-        subtitle="Cut your UPPCL bill by up to 90% with a rooftop solar system from Balaji Enterprises — Basti's trusted partner for Adani, Tata & Waaree solar panels. Subsidy support included."
+        subtitle="Balaji Enterprises designs and installs rooftop solar systems across Basti with genuine Adani, Tata and Waaree panels, subsidy filing, net metering and local after-sales support."
         bullets={[
           "Govt. subsidy up to ₹78,000",
           "Tier-1 Adani / Tata / Waaree panels",
@@ -155,25 +160,33 @@ export default function HomePage() {
         ]}
       />
 
-      <Section className="!py-12 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { value: "200+", label: "Solar plants installed" },
-            { value: "1.2 MW+", label: "Capacity commissioned" },
-            { value: "98%", label: "Customer satisfaction" },
-            { value: "10+ yrs", label: "Local experience" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="font-display text-3xl lg:text-4xl font-extrabold text-brand-700">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs lg:text-sm text-slate-600">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+      <Section className="!py-8 bg-brand-950 text-white">
+        <Reveal>
+          <div className="grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 text-center sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { to: 200, suffix: "+", decimals: 0, label: "Solar plants installed" },
+              { to: 1.2, suffix: " MW+", decimals: 1, label: "Capacity commissioned" },
+              { to: 98, suffix: "%", decimals: 0, label: "Customer satisfaction" },
+              { to: 10, suffix: "+ yrs", decimals: 0, label: "Local experience" },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-brand-950/80 px-5 py-6">
+                <p className="font-display text-3xl lg:text-4xl font-extrabold text-sun-300">
+                  <AnimatedCounter
+                    to={stat.to}
+                    suffix={stat.suffix}
+                    decimals={stat.decimals}
+                  />
+                </p>
+                <p className="mt-1 text-xs lg:text-sm text-slate-200">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </Section>
+
+      <BrandMarquee />
 
       <Section id="about" className="bg-slate-50">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
@@ -281,14 +294,17 @@ export default function HomePage() {
           description="From a 1 kW home setup to a 1 MW industrial plant, we cover every solar service you might need — under one roof."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <ServiceCard
-              key={s.slug}
-              slug={s.slug}
-              title={s.title}
-              description={s.intro}
-              icon={s.icon}
-            />
+          {services.map((s, i) => (
+            <Reveal key={s.slug} delay={i * 60}>
+              <TiltCard className="h-full">
+                <ServiceCard
+                  slug={s.slug}
+                  title={s.title}
+                  description={s.intro}
+                  icon={s.icon}
+                />
+              </TiltCard>
+            </Reveal>
           ))}
         </div>
         <div className="mt-10 text-center">
@@ -306,15 +322,18 @@ export default function HomePage() {
           description="We only stock genuine, MNRE-approved, Tier-1 modules from manufacturers with proven 25-year reliability."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {brands.map((b) => (
-            <BrandCard
-              key={b.slug}
-              slug={b.slug}
-              name={b.name}
-              rating={b.rating}
-              warranty={b.warranty}
-              about={b.about}
-            />
+          {brands.map((b, i) => (
+            <Reveal key={b.slug} delay={i * 60}>
+              <TiltCard className="h-full">
+                <BrandCard
+                  slug={b.slug}
+                  name={b.name}
+                  rating={b.rating}
+                  warranty={b.warranty}
+                  about={b.about}
+                />
+              </TiltCard>
+            </Reveal>
           ))}
         </div>
       </Section>
