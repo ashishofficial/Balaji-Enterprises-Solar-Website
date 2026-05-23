@@ -1,16 +1,29 @@
 import { siteConfig } from "@/lib/site-config";
 import { MapPinIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
-export function MapEmbed() {
+export function MapEmbed({
+  className,
+  iframeClassName,
+}: {
+  className?: string;
+  iframeClassName?: string;
+}) {
   const q = encodeURIComponent(siteConfig.address.fullAddress);
   const src = `https://www.google.com/maps?q=${q}&output=embed`;
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card bg-white">
+    <div
+      className={cn(
+        "overflow-hidden rounded-2xl border border-slate-200 shadow-card bg-white",
+        className
+      )}
+    >
       <iframe
         title={`Map showing ${siteConfig.name} location in Basti`}
         src={src}
         width="100%"
         height="380"
+        className={iframeClassName}
         style={{ border: 0 }}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

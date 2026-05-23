@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/lib/site-config";
-import { whatsappMessage } from "@/lib/utils";
+import { cn, whatsappMessage } from "@/lib/utils";
 import { WhatsAppIcon, CheckIcon } from "@/components/icons";
 
 type FormState = {
@@ -21,7 +21,7 @@ const initialState: FormState = {
   message: "",
 };
 
-export function ContactForm() {
+export function ContactForm({ className }: { className?: string }) {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
 
@@ -34,7 +34,12 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-brand-50 border border-brand-200 p-8 text-center">
+      <div
+        className={cn(
+          "rounded-2xl bg-brand-50 border border-brand-200 p-8 text-center",
+          className
+        )}
+      >
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-white">
           <CheckIcon strokeWidth={3} />
         </div>
@@ -59,7 +64,10 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8 shadow-card space-y-4"
+      className={cn(
+        "rounded-2xl bg-white border border-slate-200 p-6 lg:p-8 shadow-card space-y-4",
+        className
+      )}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <Field

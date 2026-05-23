@@ -14,6 +14,7 @@ import { MapEmbed } from "@/components/common/MapEmbed";
 import { CTABanner } from "@/components/common/CTABanner";
 import { BrandMarquee } from "@/components/common/BrandMarquee";
 import { AnimatedCounter } from "@/components/common/AnimatedCounter";
+import { Carousel } from "@/components/common/Carousel";
 import { Reveal } from "@/components/common/Reveal";
 import { TiltCard } from "@/components/common/TiltCard";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -385,11 +386,11 @@ export default function HomePage() {
           title="Real reviews from real Basti customers"
           description="Hundreds of homeowners, shopkeepers and business owners have trusted Balaji Enterprises for their solar needs."
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Carousel label="customer reviews">
           {testimonials.slice(0, 6).map((t) => (
             <TestimonialCard key={t.name} t={t} />
           ))}
-        </div>
+        </Carousel>
         <div className="mt-10 text-center">
           <Link href="/testimonials" className="btn-secondary">
             Read more reviews
@@ -452,11 +453,11 @@ export default function HomePage() {
           title="Latest from our blog"
           description="Helpful guides on solar subsidy, savings, brand comparisons and Indian solar policy."
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.slice(0, 3).map((p) => (
+        <Carousel label="blog articles">
+          {posts.map((p) => (
             <BlogCard key={p.slug} post={p} />
           ))}
-        </div>
+        </Carousel>
         <div className="mt-10 text-center">
           <Link href="/blog" className="btn-secondary">
             See all articles
@@ -472,10 +473,13 @@ export default function HomePage() {
           title="Get your free rooftop solar quote today"
           description="Fill the form and we'll send a personalised quote with subsidy details on WhatsApp within 30 minutes."
         />
-        <div className="grid gap-8 lg:grid-cols-2 items-start">
-          <ContactForm />
-          <div className="space-y-6">
-            <MapEmbed />
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <ContactForm className="h-full" />
+          <div className="grid h-full gap-6 lg:grid-rows-[1fr_auto]">
+            <MapEmbed
+              className="flex h-full min-h-[360px] flex-col"
+              iframeClassName="flex-1"
+            />
             <div className="card p-6 space-y-3 text-sm">
               <h3 className="text-lg">Visit our office</h3>
               <p className="text-slate-600">{siteConfig.address.fullAddress}</p>

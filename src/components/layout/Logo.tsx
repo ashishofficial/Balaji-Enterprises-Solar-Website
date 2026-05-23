@@ -22,7 +22,7 @@ export function Logo({ className }: { className?: string }) {
       </span>
       <span className="flex flex-col leading-none">
         <span className="font-display text-lg font-bold text-slate-900">
-          Balaji <span className="text-brand-600">Solar</span>
+          Balaji <span className="text-brand-600">Enterprises</span>
         </span>
         <span className="text-[10px] uppercase tracking-widest text-slate-600">
           Basti · UP

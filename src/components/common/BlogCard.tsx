@@ -10,15 +10,17 @@ export function BlogCard({ post }: { post: Post }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="card card-hover group overflow-hidden flex flex-col h-full"
+      draggable={false}
+      className="card card-hover group overflow-hidden flex flex-col h-full [-webkit-user-drag:none]"
     >
       <div className="img-zoom relative aspect-[16/10] bg-slate-100">
         <Image
           src={image.src}
           alt={image.alt}
           fill
+          draggable={false}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
+          className="object-cover pointer-events-none [-webkit-user-drag:none]"
         />
         <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 shadow-sm">
           {post.category}
