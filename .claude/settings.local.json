@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --turbopack --use-npm --yes)",
+      "Bash(curl -s http://localhost:3789/sitemap.xml)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"Layout CSS: %{http_code}\\\\n\" \"http://localhost:3000/_next/static/css/app/layout.css?v=1779535163716\")",
+      "Bash(curl -s \"http://localhost:3000/_next/static/css/app/layout.css?v=1779535163716\")",
+      "Bash(curl -s -o /dev/null -w \"Robots: %{http_code}\\\\n\" http://localhost:3000/robots.txt)",
+      "Bash(xargs sed -i 's/text-slate-500/text-slate-600/g')",
+      "Read(//c/Users/Nope/Desktop/Yash Trivedi/**)"
+    ]
+  }
+}
