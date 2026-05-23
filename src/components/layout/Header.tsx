@@ -19,6 +19,7 @@ const mainNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services", dropdown: "services" as const },
+  { href: "/solar-scheme", label: "Govt Solar Scheme" },
   { href: "/brands", label: "Brands", dropdown: "brands" as const },
   { href: "/locations", label: "Service Areas", dropdown: "locations" as const },
   { href: "/blog", label: "Blog" },

@@ -54,32 +54,41 @@ export function Footer() {
               <MailIcon width={16} height={16} className="text-brand-400" />
               {siteConfig.email}
             </a>
-            <a
-              href={siteConfig.mapLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
-            >
-              <MapPinIcon
-                width={16}
-                height={16}
-                className="text-brand-400 mt-0.5 shrink-0"
-              />
-              <span>{siteConfig.address.fullAddress}</span>
-            </a>
-            <a
-              href={lucknowMapLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
-            >
-              <MapPinIcon
-                width={16}
-                height={16}
-                className="text-brand-400 mt-0.5 shrink-0"
-              />
-              <span>{lucknowAddress}</span>
-            </a>
+            <div className="space-y-3">
+              <div>
+                <h5 className="text-white text-xs font-semibold mb-1 uppercase tracking-wide">Hardoi</h5>
+                <a
+                  href={siteConfig.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
+                >
+                  <MapPinIcon
+                    width={16}
+                    height={16}
+                    className="text-brand-400 mt-0.5 shrink-0"
+                  />
+                  <span>{siteConfig.address.fullAddress}</span>
+                </a>
+              </div>
+
+              <div>
+                <h5 className="text-white text-xs font-semibold mb-1 uppercase tracking-wide">Lucknow</h5>
+                <a
+                  href={lucknowMapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-slate-100 hover:text-sun-200"
+                >
+                  <MapPinIcon
+                    width={16}
+                    height={16}
+                    className="text-brand-400 mt-0.5 shrink-0"
+                  />
+                  <span>{lucknowAddress}</span>
+                </a>
+              </div>
+            </div>
             <p className="flex items-center gap-2 text-slate-100">
               <ClockIcon width={16} height={16} className="text-brand-400" />
               Mon-Sat: 9 AM – 7 PM · Sun: 10 AM – 4 PM
