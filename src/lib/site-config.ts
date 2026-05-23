@@ -11,7 +11,7 @@ export const siteConfig = {
   phoneDisplay: "+91 94520 99320",
   whatsapp: "919452099320",
   whatsappLink: "https://wa.me/919452099320",
-  email: "contact@balajienterprisesbasti.in",
+  email: "balajisolarbasti@gmail.com",
   address: {
     street: "Bansi Road, Badeban Rd, Bargadwa",
     locality: "Basti",
