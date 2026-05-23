@@ -191,7 +191,7 @@ export function Footer() {
               href="https://codingclave.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-white hover:text-sun-200 transition-colors"
+              className="font-semibold text-white hover:text-sun-200 transition-colors mr-4"
             >
               CodingClave Development LLP
             </a>
