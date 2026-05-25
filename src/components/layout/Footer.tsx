@@ -13,17 +13,23 @@ import {
 } from "@/components/icons";
 
 const hardoiAddress =
-  "Bansi Road, Badeban Rd, Bargadwa, Basti, Habeli Khas, Uttar Pradesh 272001";
+  "Nourang Market, Shahjahanpur Road, Hardoi - 241001";
 const hardoiMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   hardoiAddress
 )}`;
+const hardoiPhone = "+918874215555";
+const hardoiPhoneDisplay = "+91 88742 15555";
 const bastiAddress = siteConfig.address.fullAddress;
 const bastiMapLink = siteConfig.mapLink;
+const bastiPhone = siteConfig.phone;
+const bastiPhoneDisplay = siteConfig.phoneDisplay;
 const lucknowAddress =
   "1st Floor, Vivek Plaza, Vibhuti Khand, Gomti Nagar, Lucknow 226010";
 const lucknowMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   lucknowAddress
 )}`;
+const lucknowPhone = "+919670780555";
+const lucknowPhoneDisplay = "+91 96707 80555";
 
 export function Footer() {
   return (
@@ -131,31 +137,48 @@ export function Footer() {
               label: "Hardoi:",
               address: hardoiAddress,
               href: hardoiMapLink,
+              phone: hardoiPhone,
+              phoneDisplay: hardoiPhoneDisplay,
             },
             {
               label: "Basti:",
               address: bastiAddress,
               href: bastiMapLink,
+              phone: bastiPhone,
+              phoneDisplay: bastiPhoneDisplay,
             },
             {
               label: "Lucknow:",
               address: lucknowAddress,
               href: lucknowMapLink,
+              phone: lucknowPhone,
+              phoneDisplay: lucknowPhoneDisplay,
             },
           ].map((item) => (
-            <a
+            <div
               key={item.label}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-2xl border border-white/10 bg-slate-950/80 py-3 px-4 transition hover:border-sun-200"
+              className="group rounded-2xl border border-white/10 bg-slate-950/80 py-3 px-4 transition hover:border-sun-200"
             >
-              <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wide text-white font-semibold mb-1">
-                <MapPinIcon width={16} height={16} className="text-brand-400" />
-                {item.label}
-              </div>
-              <p className="text-slate-300 leading-5">{item.address}</p>
-            </a>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wide text-white font-semibold mb-1">
+                  <MapPinIcon width={16} height={16} className="text-brand-400" />
+                  {item.label}
+                </div>
+                <p className="text-slate-300 leading-5">{item.address}</p>
+              </a>
+              <a
+                href={`tel:${item.phone}`}
+                className="mt-2 flex items-center justify-center gap-2 text-slate-100 hover:text-sun-200"
+              >
+                <PhoneIcon width={16} height={16} className="text-brand-400" />
+                {item.phoneDisplay}
+              </a>
+            </div>
           ))}
         </div>
 

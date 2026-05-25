@@ -42,6 +42,12 @@ const locationFaqs = (l: Location): FAQ[] => [
 
 export function LocationTemplate({ location }: { location: Location }) {
   const faqs = locationFaqs(location);
+  const phone = location.phone ?? siteConfig.phone;
+  const phoneDisplay = location.phoneDisplay ?? siteConfig.phoneDisplay;
+  const whatsappLink = location.whatsapp
+    ? `https://wa.me/${location.whatsapp}`
+    : siteConfig.whatsappLink;
+
   return (
     <>
       <JsonLd
@@ -119,12 +125,12 @@ export function LocationTemplate({ location }: { location: Location }) {
             <h2>How quickly can you start in {location.city}?</h2>
             <p>
               Once you call us at{" "}
-              <a href={`tel:${siteConfig.phone}`}>
-                <strong>{siteConfig.phoneDisplay}</strong>
+              <a href={`tel:${phone}`}>
+                <strong>{phoneDisplay}</strong>
               </a>{" "}
               or send a{" "}
               <a
-                href={siteConfig.whatsappLink}
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -182,6 +188,19 @@ export function LocationTemplate({ location }: { location: Location }) {
                         className="font-medium text-brand-700 hover:text-brand-800"
                       >
                         {location.address}
+                      </a>
+                    </dd>
+                  </div>
+                )}
+                {location.phone && location.phoneDisplay && (
+                  <div>
+                    <dt className="text-slate-600 mb-1">Local phone</dt>
+                    <dd>
+                      <a
+                        href={`tel:${location.phone}`}
+                        className="font-medium text-brand-700 hover:text-brand-800"
+                      >
+                        {location.phoneDisplay}
                       </a>
                     </dd>
                   </div>

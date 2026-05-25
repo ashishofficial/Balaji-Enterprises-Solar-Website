@@ -8,6 +8,9 @@ export type Location = {
   h1: string;
   intro: string;
   address?: string;
+  phone?: string;
+  phoneDisplay?: string;
+  whatsapp?: string;
   landmarks: string[];
   pincodes: string[];
   keywords: string[];
@@ -125,6 +128,10 @@ export const locations: Location[] = [
     h1: "Solar Company in Hardoi, Uttar Pradesh",
     intro:
       "Balaji Enterprises provides complete rooftop solar installation in Hardoi for residential, commercial and institutional customers. We help with system design, genuine solar panels, subsidy paperwork, net-metering support and long-term maintenance.",
+    address: "Nourang Market, Shahjahanpur Road, Hardoi - 241001",
+    phone: "+918874215555",
+    phoneDisplay: "+91 88742 15555",
+    whatsapp: "918874215555",
     landmarks: [
       "Hardoi Railway Station",
       "Numaish Chauraha",
@@ -152,6 +159,9 @@ export const locations: Location[] = [
       "Balaji Enterprises serves Lucknow customers with end-to-end rooftop solar solutions for homes, apartments, shops, offices, schools and commercial buildings. Our team supports site survey, solar design, installation, subsidy filing, net-metering and after-sales service.",
     address:
       "1st Floor, Vivek Plaza, Vibhuti Khand, Gomti Nagar, Lucknow 226010",
+    phone: "+919670780555",
+    phoneDisplay: "+91 96707 80555",
+    whatsapp: "919670780555",
     landmarks: [
       "Gomti Nagar",
       "Vibhuti Khand",

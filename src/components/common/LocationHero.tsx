@@ -8,6 +8,11 @@ import {
 import type { Location } from "@/data/locations";
 
 export function LocationHero({ location }: { location: Location }) {
+  const phone = location.phone ?? siteConfig.phone;
+  const whatsappLink = location.whatsapp
+    ? `https://wa.me/${location.whatsapp}`
+    : siteConfig.whatsappLink;
+
   return (
     <section className="relative isolate overflow-hidden border-b border-slate-200 bg-slate-900 text-white">
       <div
@@ -42,12 +47,12 @@ export function LocationHero({ location }: { location: Location }) {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={`tel:${siteConfig.phone}`} className="btn-primary">
+            <a href={`tel:${phone}`} className="btn-primary">
               <PhoneIcon width={16} height={16} />
               Book free survey
             </a>
             <a
-              href={siteConfig.whatsappLink}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"

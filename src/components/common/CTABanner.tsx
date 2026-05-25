@@ -4,10 +4,14 @@ import { PhoneIcon, WhatsAppIcon } from "@/components/icons";
 type CTABannerProps = {
   title?: string;
   description?: string;
+  phone?: string;
+  whatsappLink?: string;
 };
 
 export function CTABanner({
   title = "Ready for a free rooftop solar quote?",
+  phone = siteConfig.phone,
+  whatsappLink = siteConfig.whatsappLink,
   description = "Talk to a Balaji Enterprises solar expert today. Site survey is free across Basti — no obligation, no pressure.",
 }: CTABannerProps) {
   return (
@@ -41,14 +45,14 @@ export function CTABanner({
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${phone}`}
                 className="btn bg-white text-brand-700 hover:bg-slate-100"
               >
                 <PhoneIcon width={16} height={16} />
                 Call Now
               </a>
               <a
-                href={siteConfig.whatsappLink}
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn bg-[#25D366] text-white hover:bg-[#1ebe57]"

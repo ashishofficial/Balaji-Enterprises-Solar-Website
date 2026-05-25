@@ -21,14 +21,35 @@ const initialState: FormState = {
   message: "",
 };
 
-export function ContactForm({ className }: { className?: string }) {
-  const [form, setForm] = useState<FormState>(initialState);
+type ContactFormProps = {
+  className?: string;
+  defaultLocation?: string;
+  callPhone?: string;
+  phoneDisplay?: string;
+  whatsappNumber?: string;
+};
+
+export function ContactForm({
+  className,
+  defaultLocation = "",
+  callPhone = siteConfig.phone,
+  phoneDisplay = siteConfig.phoneDisplay,
+  whatsappNumber = siteConfig.whatsapp,
+}: ContactFormProps) {
+  const [form, setForm] = useState<FormState>({
+    ...initialState,
+    location: defaultLocation,
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Hello Balaji Enterprises,\n\nI'd like a free solar quote.\n\nName: ${form.name}\nPhone: ${form.phone}\nLocation: ${form.location}\nService: ${form.service}\n\n${form.message}`;
-    window.open(whatsappMessage(text), "_blank", "noopener,noreferrer");
+    window.open(
+      whatsappMessage(text, whatsappNumber),
+      "_blank",
+      "noopener,noreferrer"
+    );
     setSubmitted(true);
   };
 
@@ -52,10 +73,10 @@ export function ContactForm({ className }: { className?: string }) {
           hours.
         </p>
         <a
-          href={`tel:${siteConfig.phone}`}
+          href={`tel:${callPhone}`}
           className="btn-primary mt-6 inline-flex"
         >
-          Or call us now: {siteConfig.phoneDisplay}
+          Or call us now: {phoneDisplay}
         </a>
       </div>
     );

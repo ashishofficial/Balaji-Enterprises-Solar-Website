@@ -24,7 +24,7 @@ export const posts: Post[] = [
       "Discover the top 10 benefits of installing rooftop solar panels in Basti, Uttar Pradesh — from 90% bill savings to subsidy support and 25-year warranty.",
     image: "rooftopCustomer",
     date: "2026-01-15",
-    readTime: "8 min",
+    readTime: "14 min",
     category: "Solar Education",
     keywords: [
       "solar panel benefits Basti",
@@ -43,7 +43,7 @@ export const posts: Post[] = [
       "Get up to ₹78,000 solar subsidy in Uttar Pradesh under PM Surya Ghar Muft Bijli Yojana. Eligibility, application steps, and documents explained.",
     image: "heroGPS",
     date: "2026-02-02",
-    readTime: "10 min",
+    readTime: "15 min",
     category: "Subsidy & Policy",
     keywords: [
       "solar subsidy UP",
@@ -62,7 +62,7 @@ export const posts: Post[] = [
       "On-grid, off-grid or hybrid solar? Detailed comparison of cost, features, payback and best use-cases for homes and businesses in India.",
     image: "rooftopArrayTeam",
     date: "2026-02-20",
-    readTime: "7 min",
+    readTime: "14 min",
     category: "Solar Education",
     keywords: [
       "on grid vs off grid solar",
@@ -81,7 +81,7 @@ export const posts: Post[] = [
       "Compare Adani, Tata, Waaree, Vikram and Loom solar panels for 2026. Efficiency, warranty, prices and which is best for your home in India.",
     image: "commercialInstall",
     date: "2026-03-10",
-    readTime: "12 min",
+    readTime: "16 min",
     category: "Brand Reviews",
     keywords: [
       "best solar panel India",
@@ -100,7 +100,7 @@ export const posts: Post[] = [
       "Real savings from rooftop solar in India — generation, monthly bill reduction and payback period for 1 kW to 10 kW systems explained.",
     image: "rooftop3kw",
     date: "2026-04-05",
-    readTime: "9 min",
+    readTime: "15 min",
     category: "Savings & ROI",
     keywords: [
       "solar electricity savings",

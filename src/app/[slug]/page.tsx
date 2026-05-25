@@ -10,10 +10,14 @@ import { buildMetadata } from "@/lib/seo";
 type Params = Promise<{ slug: string }>;
 
 export function generateStaticParams() {
+  const genericLocations = locations.filter(
+    (location) => location.slug !== "solar-company-hardoi"
+  );
+
   return [
     ...services.map((s) => ({ slug: s.slug })),
     ...brands.map((b) => ({ slug: b.slug })),
-    ...locations.map((l) => ({ slug: l.slug })),
+    ...genericLocations.map((l) => ({ slug: l.slug })),
   ];
 }
 

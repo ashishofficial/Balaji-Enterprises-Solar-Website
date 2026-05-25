@@ -3,6 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { posts, getPost } from "@/data/posts";
 import { postContent } from "@/data/post-content";
+import { longFormContent } from "@/data/blog-longform";
+import { deepDiveContent } from "@/data/blog-deepdives";
+import { targetLengthContent } from "@/data/blog-2500-content";
+import { finalExpansionContent } from "@/data/blog-final-expansion";
+import { BlogCommonFooter } from "@/data/blog-common-footer";
 import { buildMetadata } from "@/lib/seo";
 import { Section } from "@/components/common/Section";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
@@ -40,6 +45,10 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const post = getPost(slug);
   if (!post) notFound();
   const Content = postContent[post.slug];
+  const LongFormContent = longFormContent[post.slug];
+  const DeepDiveContent = deepDiveContent[post.slug];
+  const TargetLengthContent = targetLengthContent[post.slug];
+  const FinalExpansionContent = finalExpansionContent[post.slug];
   const url = `${siteConfig.url}/blog/${post.slug}`;
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const heroImage = images[post.image];
@@ -101,6 +110,11 @@ export default async function BlogPostPage({ params }: { params: Params }) {
       <Section>
         <article className="prose prose-balaji prose-lg max-w-3xl mx-auto space-y-5 text-slate-700 leading-relaxed">
           {Content ? <Content /> : <p>{post.excerpt}</p>}
+          {LongFormContent ? <LongFormContent /> : null}
+          {DeepDiveContent ? <DeepDiveContent /> : null}
+          {TargetLengthContent ? <TargetLengthContent /> : null}
+          {FinalExpansionContent ? <FinalExpansionContent /> : null}
+          <BlogCommonFooter />
         </article>
       </Section>
 
