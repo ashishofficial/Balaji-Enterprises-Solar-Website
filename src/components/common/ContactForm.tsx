@@ -18,33 +18,48 @@ type FormErrors = Partial<Record<keyof FormState, string>>;
 
 const lettersAndSpacesRegex = /^[\p{L}\s]+$/u;
 
+const fieldLabels: Record<keyof FormState, string> = {
+  name: "Your Name",
+  phone: "Phone Number",
+  location: "Location / Area",
+  service: "Service Required",
+  message: "Message",
+};
+
 const contactSchema: yup.ObjectSchema<FormState> = yup.object({
   name: yup
     .string()
+    .label(fieldLabels.name)
     .trim()
-    .required("Name is required")
-    .matches(lettersAndSpacesRegex, "Name can only contain letters and spaces")
-    .min(2, "Name must be at least 2 characters")
-    .max(60, "Name must be under 60 characters"),
+    .required("${label} is required")
+    .matches(lettersAndSpacesRegex, "${label} can only contain letters and spaces")
+    .min(2, "${label} must be at least 2 characters")
+    .max(60, "${label} must be under 60 characters"),
   phone: yup
     .string()
+    .label(fieldLabels.phone)
     .trim()
-    .required("Phone number is required")
+    .required("${label} is required")
     .matches(
       /^(?:\+91[\s-]?)?[6-9]\d{9}$/,
       "Enter a valid 10-digit Indian mobile number"
     ),
   location: yup
     .string()
+    .label(fieldLabels.location)
     .trim()
-    .required("Location is required")
-    .min(2, "Location must be at least 2 characters")
-    .max(100, "Location must be under 100 characters"),
-  service: yup.string().required("Please select a service"),
+    .required("${label} is required")
+    .min(2, "${label} must be at least 2 characters")
+    .max(100, "${label} must be under 100 characters"),
+  service: yup
+    .string()
+    .label(fieldLabels.service)
+    .required("Please select a ${label}"),
   message: yup
     .string()
+    .label(fieldLabels.message)
     .defined()
-    .max(500, "Message must be under 500 characters"),
+    .max(500, "${label} must be under 500 characters"),
 });
 
 const initialState: FormState = {
@@ -147,7 +162,7 @@ export function ContactForm({
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
-          label="Your Name"
+          label={fieldLabels.name}
           name="name"
           value={form.name}
           onChange={(v) =>
@@ -160,7 +175,7 @@ export function ContactForm({
           required
         />
         <Field
-          label="Phone Number"
+          label={fieldLabels.phone}
           name="phone"
           type="tel"
           value={form.phone}
@@ -173,7 +188,7 @@ export function ContactForm({
         />
       </div>
       <Field
-        label="Location / Area"
+        label={fieldLabels.location}
         name="location"
         value={form.location}
         onChange={(v) => setForm({ ...form, location: v })}
@@ -186,7 +201,7 @@ export function ContactForm({
           htmlFor="service"
           className="block text-sm font-medium text-slate-700 mb-1.5"
         >
-          Service Required
+          {fieldLabels.service}
         </label>
         <select
           id="service"
@@ -210,7 +225,7 @@ export function ContactForm({
           htmlFor="message"
           className="block text-sm font-medium text-slate-700 mb-1.5"
         >
-          Message (Optional)
+          {fieldLabels.message} (Optional)
         </label>
         <textarea
           id="message"
