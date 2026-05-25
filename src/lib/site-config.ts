@@ -36,10 +36,10 @@ export const siteConfig = {
     { day: "Sunday", open: "10:00", close: "16:00" },
   ],
   social: {
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/share/1G7pmUE1GA/",
+    instagram: "https://www.instagram.com/balajisolarbasti?igsh=amR2NG80czhrYTg0",
     youtube: "",
-    twitter: "",
+    twitter: "https://x.com/balajisolarwale",
   },
   founder: "Balaji Enterprises Team",
   yearFounded: 2018,
