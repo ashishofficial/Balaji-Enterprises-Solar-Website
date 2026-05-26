@@ -197,8 +197,8 @@ export default function HomePage() {
             </p>
             <h2>Basti&apos;s most trusted name in rooftop solar</h2>
             <p className="mt-4 text-slate-600">
-              Balaji Enterprises is a solar panel dealer and EPC company based in
-              Bargadwa, Basti, serving customers across Uttar Pradesh since
+              Balaji Enterprises is a solar panel dealer and EPC company based at
+              Badeban Bypass, Bansi Road, Basti, serving customers across Uttar Pradesh since
               2018. We design, supply and install on-grid, off-grid and hybrid
               solar systems for homes, shops, factories, schools, hospitals and
               farms — backed by MNRE-empanelled vendor processes and authorised
@@ -430,7 +430,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Where We Work"
           title="Solar installation across Basti & nearby districts"
-          description="Based in Bargadwa, Basti, we deliver solar installation across eastern Uttar Pradesh."
+          description="Based at Badeban Bypass, Bansi Road, Basti, we deliver solar installation across eastern Uttar Pradesh."
           className="lg:max-w-5xl"
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -441,7 +441,7 @@ export default function HomePage() {
             </div>
             <p className="mt-2 text-sm text-slate-600">
               Walterganj, Captainganj, Harraiya, Rudhauli, Bansi Road,
-              Bargadwa, Habeli Khas
+              Badeban Bypass
             </p>
           </div>
           {locations.map((l) => (

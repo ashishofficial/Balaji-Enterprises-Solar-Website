@@ -13,14 +13,13 @@ export const siteConfig = {
   whatsappLink: "https://wa.me/919452099320",
   email: "balajisolarbasti@gmail.com",
   address: {
-    street: "Bansi Road, Badeban Rd, Bargadwa",
+    street: "Badeban Bypass, Bansi Road",
     locality: "Basti",
     region: "Uttar Pradesh",
     postalCode: "272001",
     country: "IN",
-    landmark: "Habeli Khas",
-    fullAddress:
-      "Bansi Road, Badeban Rd, Bargadwa, Basti, Habeli Khas, Uttar Pradesh 272001",
+    landmark: "Badeban Bypass",
+    fullAddress: "Badeban Bypass, Bansi Road, Basti, Uttar Pradesh 272001",
   },
   geo: {
     latitude: 26.8124,
@@ -38,16 +37,16 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/share/1G7pmUE1GA/",
     instagram: "https://www.instagram.com/balajisolarbasti?igsh=amR2NG80czhrYTg0",
-    youtube: "",
+    youtube: "https://www.youtube.com/@balajisolarbasti",
     twitter: "https://x.com/balajisolarwale",
   },
   founder: "Balaji Enterprises Team",
   yearFounded: 2018,
   gstNumber: "",
   mapEmbed:
-    "https://www.google.com/maps/embed/v1/place?q=Bansi+Road,+Bargadwa,+Basti,+Uttar+Pradesh+272001&key=",
+    "https://www.google.com/maps/embed/v1/place?q=Badeban+Bypass,+Bansi+Road,+Basti,+Uttar+Pradesh+272001&key=",
   mapLink:
-    "https://www.google.com/maps/search/?api=1&query=Bansi+Road+Bargadwa+Basti+Uttar+Pradesh+272001",
+    "https://www.google.com/maps/search/?api=1&query=Badeban+Bypass+Bansi+Road+Basti+Uttar+Pradesh+272001",
 };
 
 export type SiteConfig = typeof siteConfig;

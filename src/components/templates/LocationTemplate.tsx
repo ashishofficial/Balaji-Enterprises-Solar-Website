@@ -83,7 +83,7 @@ export function LocationTemplate({ location }: { location: Location }) {
               for most households.
             </p>
             <p>
-              Balaji Enterprises is based in Bargadwa, Basti — just{" "}
+              Balaji Enterprises is based at Badeban Bypass, Bansi Road, Basti — just{" "}
               {location.distanceKm} km from {location.city}. We&apos;ve been
               installing rooftop solar in {location.district} district for
               years, with installs in {location.landmarks.slice(0, 3).join(", ")}{" "}

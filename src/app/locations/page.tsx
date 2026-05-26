@@ -46,7 +46,7 @@ export default function LocationsPage() {
         <SectionHeading
           eyebrow="Where We Work"
           title="Solar installation across eastern Uttar Pradesh"
-          description="From our Bargadwa office in Basti, we deliver complete rooftop solar solutions across Basti district and nearby cities."
+          description="From our Badeban Bypass, Bansi Road office in Basti, we deliver complete rooftop solar solutions across Basti district and nearby cities."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="card p-6">

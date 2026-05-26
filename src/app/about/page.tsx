@@ -19,7 +19,7 @@ import { images } from "@/lib/images";
 export const metadata = buildMetadata({
   title: "About Balaji Enterprises — Solar Company in Basti, UP",
   description:
-    "Learn about Balaji Enterprises — a trusted solar EPC company based in Bargadwa, Basti. Since 2018 we've installed 1.2 MW+ rooftop solar across Uttar Pradesh.",
+    "Learn about Balaji Enterprises — a trusted solar EPC company based at Badeban Bypass, Bansi Road, Basti. Since 2018 we've installed 1.2 MW+ rooftop solar across Uttar Pradesh.",
   path: "/about",
   keywords: ["about Balaji Enterprises", ...baseKeywords],
 });
@@ -63,7 +63,7 @@ export default function AboutPage() {
       <Hero
         eyebrow="About Us"
         title={<>Powering Basti with clean solar energy since 2018</>}
-        subtitle="Balaji Enterprises is a family-run solar EPC business based in Bargadwa, Basti. We design and install rooftop solar systems for homes and businesses across Uttar Pradesh — with honesty, quality and zero shortcuts."
+        subtitle="Balaji Enterprises is a family-run solar EPC business based at Badeban Bypass, Bansi Road, Basti. We design and install rooftop solar systems for homes and businesses across Uttar Pradesh — with honesty, quality and zero shortcuts."
         showRating
         image={images.teamBasti}
       />
@@ -81,14 +81,14 @@ export default function AboutPage() {
             </p>
             <p>
               We started small — a handful of residential rooftop projects in
-              Bargadwa and Bansi Road. Today, we&apos;ve installed 200+
+              Badeban Bypass and Bansi Road. Today, we&apos;ve installed 200+
               rooftop solar plants across Basti, Sant Kabir Nagar, Gorakhpur
               and Ayodhya, with over 1.2 MW of solar capacity now generating
               clean electricity for Uttar Pradesh.
             </p>
             <p>
               What hasn&apos;t changed is our local commitment. Our office
-              is in Bargadwa. Our installers live in Basti. When something
+              is at Badeban Bypass, Bansi Road. Our installers live in Basti. When something
               needs attention, we&apos;re there — not weeks later, but the
               same day or the next.
             </p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
               <dl className="mt-4 grid grid-cols-2 gap-4">
                 {[
                   { k: "Founded", v: String(siteConfig.yearFounded) },
-                  { k: "Head office", v: "Bargadwa, Basti" },
+                  { k: "Head office", v: "Badeban Bypass, Bansi Road" },
                   { k: "Installs", v: "200+" },
                   { k: "Capacity", v: "1.2 MW+" },
                   { k: "Team size", v: "12+" },

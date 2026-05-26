@@ -17,7 +17,7 @@ import {
 export const metadata = buildMetadata({
   title: "Contact Balaji Enterprises — Solar Dealer in Basti",
   description:
-    "Get in touch with Balaji Enterprises for rooftop solar in Basti. Office in Bargadwa, Bansi Road. Call +91 94520 99320 or WhatsApp for a free site survey.",
+    "Get in touch with Balaji Enterprises for rooftop solar in Basti. Office at Badeban Bypass, Bansi Road. Call +91 94520 99320 or WhatsApp for a free site survey.",
   path: "/contact",
   keywords: ["contact solar dealer Basti", ...baseKeywords],
 });
@@ -47,7 +47,7 @@ const contactCards = [
   {
     icon: MapPinIcon,
     label: "Visit Us",
-    value: "Bansi Road, Bargadwa",
+    value: "Badeban Bypass, Bansi Road",
     href: siteConfig.mapLink,
     sub: "Basti, UP 272001",
   },
@@ -65,7 +65,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Balaji Enterprises"
         title="Book a free rooftop solar survey in Basti"
-        description="Call, WhatsApp, email or visit our Bargadwa office. We will review your bill, roof and subsidy eligibility before quoting."
+        description="Call, WhatsApp, email or visit our Badeban Bypass, Bansi Road office. We will review your bill, roof and subsidy eligibility before quoting."
         image={images.teamBasti}
         stats={[
           { value: "30 min", label: "Typical quote response" },
